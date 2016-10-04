@@ -1,2 +1,6 @@
 # bradleycarrion.github.io
-Professional Website
+Professional website outlining:
+- Job experience
+- Technical Skills
+- Projects
+- Resume
