@@ -15,6 +15,21 @@
 
 	<body>
 		<div id="react-content"></div>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script>
+			console.log("file found");
+
+			class HomePage extends React.Component {
+			  render() {
+			    return (
+			      <h1>Bradley Carrion</h1>
+			    );
+			  }
+			}
+
+			ReactDOM.render(
+			  <HomePage/>,
+			  document.getElementById('react-content')
+			);
+		</script>
 	</body>
 </html>
