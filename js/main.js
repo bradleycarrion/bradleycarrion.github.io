@@ -1,3 +1,5 @@
+console.log("file found");
+
 class HomePage extends React.Component {
   render() {
     return (
