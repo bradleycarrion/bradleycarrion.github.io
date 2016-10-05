@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 console.log("file found");
 
 class HomePage extends React.Component {
