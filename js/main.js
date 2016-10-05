@@ -9,4 +9,4 @@ class HomePage extends React.Component {
 ReactDOM.render(
   <HomePage/>,
   document.getElementById('react-content')
-)
+);
