@@ -7,6 +7,6 @@ class HomePage extends React.Component {
 }
 
 ReactDOM.render(
-  <HomePage></HomePage>,
+  <HomePage/>,
   document.getElementById('react-content')
 )
