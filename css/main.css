@@ -1,9 +1,45 @@
 body {
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.menu {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  left: -310px;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#open-menu {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: none;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+
+#close-menu {
+  margin-left: 250px;
+  width: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: none;
+}
+
+#content {
+  position: absolute;
+  margin-left: 55%;
+  width: 35%;
+  height: 30%;
+  min-width: 200px;
+  min-height: 130px;
+  background: rgba(0, 0, 0, 0.0);
+  font-size: 60px;
   text-align: center;
-  color: #BFBFBF;
-  font-family: 'Montserrat';
-	margin-top: 250px;
-	margin-bottom: 50px;
-  margin-right: 600px;
-	background: none;
+  padding-bottom: 10px;
 }

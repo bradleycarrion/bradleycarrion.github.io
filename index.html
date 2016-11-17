@@ -8,27 +8,41 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-	<!-- React.js Scripts -->
-	<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
-	<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<body>
-		<div id="react-content"></div>
-		<script type="text/babel">
-			console.log("file found");
+		<button id="open-menu" type="button" aria-label="Left Align">
+  		<span class="glyphicon glyphicon-menu-hamburger" style="font-size: 250%;" aria-hidden="true"></span>
+		</button>
+		<div class="menu">
+			<button id="close-menu" type="button" class="menu-button" aria-label="Left Align">
+	  		<span class="glyphicon glyphicon-remove" style="font-size: 250%;" aria-hidden="true"></span>
+			</button>
+		</div>
 
-			class HomePage extends React.Component {
-			  render() {
-			    return (
-			      <h1>Bradley Carrion</h1>
-			    );
-			  }
-			}
-
-			ReactDOM.render(
-			  <HomePage/>,
-			  document.getElementById('react-content')
-			);
-		</script>
+		<div id="content">
+			Bradley Carrion </br><hr> <h4>Computer Science, Gonzaga University</h4>
+		</div>
 	</body>
+
+	<script type="text/javascript">
+		$("#open-menu").click(function() {
+			$('.menu').animate({"left":"0px"}, 500);
+			$("#open-menu").css("visibility", "hidden");
+		});
+
+		$("#close-menu").click(function(){
+		  $('.menu').animate({"left":"-310px"}, 500);
+			$("#open-menu").css("visibility", "visible");
+		});
+	</script>
+
+
 </html>
