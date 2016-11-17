@@ -35,12 +35,14 @@
 	<script type="text/javascript">
 		$("#open-menu").click(function() {
 			$('.menu').animate({"left":"0px"}, 500);
-			$("#open-menu").css("visibility", "hidden");
+			$("#open-menu").animate({"margin-left":"310px"}, 500);
+			//$("#open-menu").css("visibility", "hidden");
 		});
 
 		$("#close-menu").click(function(){
 		  $('.menu').animate({"left":"-310px"}, 500);
-			$("#open-menu").css("visibility", "visible");
+			$("#open-menu").animate({"margin-left":"2%"}, 500);
+			//$("#open-menu").css("visibility", "visible");
 		});
 	</script>
 
