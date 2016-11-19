@@ -7,24 +7,44 @@ body {
 }
 
 .menu {
-  width: 300px;
+  width: 325px;
   height: 100%;
   position: absolute;
-  left: -310px;
+  left: -275px;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
+  padding-top: 10px;
 }
 
-#open-menu {
+.options-buttons {
+  width: 80%;
+  height: auto;
+  margin-top: 50%;
+  font-size: 20px;
+  font-weight:lighter;
+  color: white;
+}
+
+.menu-button {
+  width: 100%;
+  min-height: 60px;
+  background: rgba(0, 0, 0, 0.0);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#resume {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.0);
-  border: none;
-  margin-left: 2%;
-  margin-top: 3%;
+  margin-top: 10px;
+  margin-left: 27%;
+  width: 50%;
+  height: 96%;
+  visibility: hidden;
 }
 
-#close-menu {
-  margin-left: 250px;
+#open-close-menu {
+  margin-left: 275px;
   width: 50px;
   color: white;
   background-color: rgba(0, 0, 0, 0.0);

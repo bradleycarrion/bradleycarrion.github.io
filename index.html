@@ -2,48 +2,57 @@
 <html>
 	<head>
 		<title>Bradley Carrion</title>
+
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
-	<!-- link to main stylesheet -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<body>
-		<button id="open-menu" type="button" aria-label="Left Align">
-  		<span class="glyphicon glyphicon-menu-hamburger" style="font-size: 250%;" aria-hidden="true"></span>
-		</button>
 		<div class="menu">
-			<button id="close-menu" type="button" class="menu-button" aria-label="Left Align">
-	  		<span class="glyphicon glyphicon-remove" style="font-size: 250%;" aria-hidden="true"></span>
+			<button id="open-close-menu" type="button" class="menu-button" aria-label="Left Align">
+	  		<i id="menu_icon" class="fa fa-bars fa-3x" aria-hidden="true"></i>
 			</button>
+			<div class="options-buttons">
+				<button id="about_me_button" type="button" class="menu-button">About Me</button>
+				<button type="button" class="menu-button">Projects</button>
+				<button id="resume_button" type="button" class="menu-button">Resume</button>
+			</div>
 		</div>
 
+		<div id="resume">
+			<embed src="Files/DisplayResume.pdf" width="100%" height="100%"/>
+		</div>
 		<div id="content">
 			Bradley Carrion </br><hr> <h4>Computer Science, Gonzaga University</h4>
 		</div>
+
 	</body>
 
 	<script type="text/javascript">
-		$("#open-menu").click(function() {
-			$('.menu').animate({"left":"0px"}, 500);
-			$("#open-menu").animate({"margin-left":"310px"}, 500);
-			//$("#open-menu").css("visibility", "hidden");
-		});
+		$("#open-close-menu").click(function() {
+			var left_pos = $(".menu").position().left;
+			if (left_pos === 0) {
+				$('.menu').animate({"left":"-275px"}, 500);
+				$("#menu_icon").addClass('fa-bars').removeClass('fa-times');
+			} else {
+				$('.menu').animate({"left":"0px"}, 500);
+				$("#menu_icon").addClass('fa-times').removeClass('fa-bars');
+			}
+		})
 
-		$("#close-menu").click(function(){
-		  $('.menu').animate({"left":"-310px"}, 500);
-			$("#open-menu").animate({"margin-left":"2%"}, 500);
-			//$("#open-menu").css("visibility", "visible");
-		});
+		$("#resume_button").click(function() {
+			$("#resume").css("visibility", "visible");
+			$("#content").css("visibility", "hidden");
+		})
+
+		$("#about_me_button").click(function() {
+			$("#resume").css("visibility", "hidden");
+			$("#content").css("visibility", "visible");
+		})
 	</script>
 
 
