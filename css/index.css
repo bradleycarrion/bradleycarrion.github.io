@@ -1,0 +1,72 @@
+body {
+  background-color: rgba(220, 220, 220, 1.0);
+}
+
+.introduction {
+  position: absolute;
+  height: 100%;
+  width: 60%;
+  padding-left: 100px;
+  line-height: 60px;
+}
+
+.intro-hi {
+  position: relative;
+  font-size: 2.2em;
+  top: 20%;
+  transform: translateY(-50%);
+}
+
+.intro-tagline {
+  position: relative;
+  font-size: 2.2em;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.intro-contact {
+  position: relative;
+  font-size: 1.5em;
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+.intro-contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.down-arrow {
+  position: fixed;
+  font-size: 2em;
+  bottom: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  animation: down-arrow-bounce 1s linear 0s infinite;
+}
+
+@keyframes down-arrow-bounce {
+  0%   { bottom: 50%; }
+  50%  { bottom: calc(50% + 10px); }
+  100% { bottom: 50%; }
+}
+
+@media only screen and (max-width: 768px) {
+  .introduction {
+    width: 100%;
+    padding: 40px;
+  }
+
+  .intro-tagline {
+    font-size: 1.5em;
+  }
+
+  .intro-hi {
+    font-size: 1.8em;
+  }
+
+  .down-arrow {
+    visibility: hidden;
+  }
+}

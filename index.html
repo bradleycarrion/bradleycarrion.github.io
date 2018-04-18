@@ -1,59 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Bradley Carrion</title>
-
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bradley Carrion</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	</head>
-
-
 	<body>
-		<div class="menu">
-			<button id="open-close-menu" type="button" class="menu-button" aria-label="Left Align">
-	  		<i id="menu_icon" class="fa fa-bars fa-3x" aria-hidden="true"></i>
-			</button>
-			<div class="options-buttons">
-				<button id="about_me_button" type="button" class="menu-button">About Me</button>
-				<button type="button" class="menu-button">Projects</button>
-				<button id="resume_button" type="button" class="menu-button">Resume</button>
-			</div>
-		</div>
-
-		<div id="resume">
-			<embed src="Files/DisplayResume.pdf" width="100%" height="100%"/>
-		</div>
-		<div id="content">
-			Bradley Carrion </br><hr> <h4>Computer Science, Gonzaga University</h4>
-		</div>
-
+		<header class="introduction">
+			<h1 class="intro-hi">Hi, nice to meet you!</h1>
+			<h1 class="intro-tagline">I'm Bradley Carrion, a builder, designer and adventurer. I also happen to be a software engineer and lover of technology.</h1>
+			<h1 class="intro-contact">
+				<span>Reach out:</span>
+				<span>
+					<a href="mailto:bradley.carrion@gmail.com">bradley.carrion@gmail.com</a>
+				</span>
+			</h1>
+			<i class="fas fa-chevron-down down-arrow"></i>
+		</header>
+		<section></section>
 	</body>
-
-	<script type="text/javascript">
-		$("#open-close-menu").click(function() {
-			var left_pos = $(".menu").position().left;
-			if (left_pos === 0) {
-				$('.menu').animate({"left":"-275px"}, 500);
-				$("#menu_icon").addClass('fa-bars').removeClass('fa-times');
-			} else {
-				$('.menu').animate({"left":"0px"}, 500);
-				$("#menu_icon").addClass('fa-times').removeClass('fa-bars');
-			}
-		})
-
-		$("#resume_button").click(function() {
-			$("#resume").css("visibility", "visible");
-			$("#content").css("visibility", "hidden");
-		})
-
-		$("#about_me_button").click(function() {
-			$("#resume").css("visibility", "hidden");
-			$("#content").css("visibility", "visible");
-		})
-	</script>
-
-
+	<script src="js/index.js"></script>
 </html>

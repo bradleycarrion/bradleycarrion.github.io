@@ -1,6 +1,6 @@
 # bradleycarrion.github.io
-Professional website outlining:
-- Job experience
-- Technical Skills
+## I love to build and discover.
+Things I want to highlight,
+- Work Experience
 - Projects
-- Resume
+- My Interests
