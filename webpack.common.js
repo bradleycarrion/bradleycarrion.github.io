@@ -15,18 +15,28 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      }
-    ],
-  },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
-  },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+        {
+            test: /\.(js|mjs|jsx|ts|tsx)$/,
+            loader: require.resolve("babel-loader"),
+            exclude: /node_modules/,
+            options: {
+                presets: [
+                    require.resolve("@babel/preset-react"),
+                    require.resolve("@babel/preset-typescript"),
+                ],
+                },
+            },
+            {        
+                test: /\.css$/,        
+                use: ["style-loader", "css-loader"],      
+            }
+        ],
+    },
+     resolve: {
+        extensions: [".ts", ".tsx", ".jsx", ".js"],  
+    },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
 };
