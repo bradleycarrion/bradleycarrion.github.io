@@ -74,12 +74,12 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
-      padding: 2rem;
+      padding: 0;
       position: relative;
-      background: linear-gradient(180deg, var(--color-cream) 0%, #f5f2ed 100%);
+      background: url('hero.jpg') center center / cover no-repeat fixed;
     }
 
     .hero::before {
@@ -89,105 +89,88 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background:
-        radial-gradient(ellipse at 20% 80%, rgba(139, 154, 125, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(201, 169, 89, 0.08) 0%, transparent 50%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0) 80%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
       pointer-events: none;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .photo-placeholder {
-      width: 280px;
-      height: 380px;
-      border: 2px solid var(--color-sage-light);
-      border-radius: 200px 200px 20px 20px;
-      margin: 0 auto 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, rgba(139, 154, 125, 0.1) 0%, rgba(201, 169, 89, 0.1) 100%);
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .photo-placeholder::before {
-      content: '';
       position: absolute;
-      inset: 8px;
-      border: 1px solid var(--color-gold-light);
-      border-radius: 195px 195px 15px 15px;
-      opacity: 0.5;
-    }
-
-    .photo-placeholder span {
-      color: var(--color-warm-gray);
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.1rem;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 2rem;
+      z-index: 1;
     }
 
     .names {
       font-family: var(--font-serif);
-      font-size: clamp(3rem, 10vw, 6rem);
+      font-size: clamp(2.5rem, 10vw, 5rem);
       font-weight: 300;
       letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-      animation: fadeInUp 1s ease-out 0.2s both;
+      margin-bottom: 0.3rem;
+      color: white;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 1.2s ease-out 0.2s both;
     }
 
     .names .ampersand {
       display: inline-block;
-      color: var(--color-gold);
       font-style: italic;
-      margin: 0 0.3em;
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      margin: 0 0.2em;
+      opacity: 0.9;
     }
 
     .tagline {
       font-family: var(--font-sans);
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--color-warm-gray);
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease-out 0.4s both;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0;
+      animation: fadeInUp 1.2s ease-out 0.4s both;
+    }
+
+    .hero-bottom {
+      position: absolute;
+      bottom: 4rem;
+      left: 0;
+      right: 0;
+      z-index: 1;
     }
 
     .wedding-date {
       font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      color: var(--color-sage);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: rgba(255, 255, 255, 0.95);
       font-weight: 400;
-      animation: fadeInUp 1s ease-out 0.6s both;
+      animation: fadeInUp 1.2s ease-out 0.6s both;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
     }
 
     .scroll-indicator {
       position: absolute;
-      bottom: 2rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       animation: bounce 2s ease-in-out infinite;
+      z-index: 10;
     }
 
     .scroll-indicator svg {
-      width: 30px;
-      height: 30px;
-      stroke: var(--color-sage-light);
+      width: 24px;
+      height: 24px;
+      stroke: rgba(255, 255, 255, 0.7);
     }
 
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
+      50% { transform: translateX(-50%) translateY(8px); }
     }
 
     /* Section Styles */
@@ -406,13 +389,12 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      section {
-        padding: 4rem 1.5rem;
+      .hero {
+        background-attachment: scroll;
       }
 
-      .photo-placeholder {
-        width: 220px;
-        height: 300px;
+      section {
+        padding: 4rem 1.5rem;
       }
 
       .details-grid {
@@ -440,13 +422,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="photo-placeholder">
-        <span>Your Photo Here</span>
-      </div>
       <h1 class="names">
         Bradley <span class="ampersand">&</span> Maya
       </h1>
       <p class="tagline">We're getting married</p>
+    </div>
+    <div class="hero-bottom">
       <p class="wedding-date">September 26th, 2026 &bull; Nevada City, California</p>
     </div>
     <div class="scroll-indicator">
